@@ -30,7 +30,7 @@ def calculate_absolute_error(pred_depth, true_depth):
 def get_sorted_png_files(path):
     return sorted([f for f in glob.glob(os.path.join(path, '**/*.png'), recursive=True)])
 
-def process_image(depth_anything, true_depth_file, img_filename, batch ,args, cmap):
+def process_image(depth_anything, true_depth_file, img_filename,args, cmap):
     """
     Process a single image: infer depth, calculate error, and save results.
     Args:
