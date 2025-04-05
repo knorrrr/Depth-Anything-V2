@@ -62,7 +62,7 @@ if __name__ == '__main__':
         if args.grayscale:
             depth = np.repeat(depth[..., np.newaxis], 3, axis=-1)
         else:
-            depth = (cmap(depth)[:, :, :3] * 255)[:, :, ::-1].astype(np.uint8)
+            depth = (cmap(depth)[:, :, :3] * 255).astype(np.uint8)
         
         if args.pred_only:
             cv2.imwrite(os.path.join(args.outdir, os.path.splitext(os.path.basename(filename))[0] + '.png'), depth)
